@@ -1,0 +1,177 @@
+@import url('./varibles.css');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* DEBUG */
+/* * {
+	outline: 1px solid red;
+} */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  background-color: var(--white);
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  --colums: 12;
+  --colums-width: var(--size-96);
+  --gap: var(--gap-36);
+  --outside: auto;
+  --min-grid-size: calc(var(--colums) * var(--colums-width) + (var(--colums) - 1) * var(--gap));
+
+  min-height: 100dvh;
+  color: var(--black);
+  position: relative;
+}
+
+body,
+input,
+textarea,
+button,
+select {
+  font-family: 'SF Pro Text', sans-serif;
+  -webkit-font-smoothing: antialiased; /* for MacOs */
+}
+
+/* GLOBAL MEDIA */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+svg,
+label,
+legend,
+button {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* GLOBAL TEXT */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: pretty;
+  line-height: 1.2;
+}
+
+p,
+strong {
+  line-height: 1.4;
+}
+
+p,
+input,
+textarea {
+  font-weight: 300;
+}
+
+p,
+label,
+li:not(:has(h1, h2, h3, h4, h5, h6)),
+time {
+  color: var(--grey-500);
+  font-size: var(--font-18);
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+input,
+textarea,
+fieldset,
+select,
+button,
+dialog {
+  border: none;
+}
+/* input:focus-visible, */
+button:focus-visible,
+a:focus-visible {
+  outline: 1.5px solid var(--black);
+  outline-offset: 0.25rem;
+}
+
+select,
+button {
+  appearance: none;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+strong {
+  color: var(--grey-500);
+}
+
+blockquote {
+  hanging-punctuation: first last;
+}
+
+/* HEADER GLOBAL */
+body > header {
+  padding-block: var(--gap-18);
+}
+
+/* FOOTER GLOBAL */
+body > footer {
+  flex: 0 1 0;
+  margin-inline: auto;
+  padding-block: var(--gap-48) var(--gap-18);
+  font-size: var(--font-14);
+}
+
+/* Hide navigation from DOM to prevent selection by keyboard after collapsing */
+@keyframes hide-from-DOM {
+  90% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 959px) {
+  :root {
+    --body-padding: 1rem;
+  }
+}
+
+@media (max-width: 559px) {
+}
