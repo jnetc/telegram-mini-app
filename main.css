@@ -1,0 +1,65 @@
+body {
+  max-width: 1200px;
+  min-height: var(--tg-viewport-height);
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  font-family: sans-serif;
+  margin-inline: auto;
+  background-color: var(--white);
+  gap: var(--gap-18);
+}
+
+header {
+  padding-block: var(--gap-16);
+}
+
+ul {
+  display: flex;
+  gap: var(--gap-16);
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: var(--gap-64);
+}
+
+h1 {
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap-16);
+}
+
+article {
+  max-width: 460px;
+  display: grid;
+  gap: var(--gap-16);
+  padding: var(--gap-16) var(--gap-32);
+  background-color: var(--surface);
+  box-shadow: 0 2rem 2rem hsl(from var(--grey-500) h s l / 0.05);
+  border-radius: var(--border-corner-10);
+
+  & header {
+    font-size: var(--font-24);
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  & button {
+    border-radius: var(--border-corner-10);
+    padding: var(--gap-16) var(--gap-32);
+    background-color: var(--warning-error);
+    color: var(--white);
+    font-size: var(--font-18);
+    font-weight: 600;
+  }
+}
