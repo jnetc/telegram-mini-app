@@ -42,6 +42,7 @@ h1 {
 article {
   max-width: 460px;
   display: grid;
+  grid-template-rows: min-content 1fr min-content;
   gap: var(--gap-16);
   padding: var(--gap-16) var(--gap-32);
   background-color: var(--surface);
