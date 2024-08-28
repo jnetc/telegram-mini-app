@@ -38,6 +38,7 @@ body {
   min-height: 100dvh;
   color: var(--black);
   position: relative;
+  scrollbar-gutter: stable;
 }
 
 body,
@@ -151,6 +152,7 @@ body > footer {
   margin-inline: auto;
   padding-block: var(--gap-48) var(--gap-18);
   font-size: var(--font-14);
+  margin-block-end: var(--gap-96);
 }
 
 /* Hide navigation from DOM to prevent selection by keyboard after collapsing */

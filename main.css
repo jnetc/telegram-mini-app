@@ -2,15 +2,31 @@ body {
   max-width: 1200px;
   min-height: var(--tg-viewport-height);
   display: grid;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: 1fr min-content;
   font-family: sans-serif;
   margin-inline: auto;
   background-color: var(--white);
   gap: var(--gap-18);
 }
 
-header {
-  padding-block: var(--gap-16);
+.menu {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  padding-block: var(--gap-24) var(--gap-16);
+  background-color: hsl(from var(--surface) h s l / 0.5);
+  backdrop-filter: blur(15px);
+  z-index: 100;
+
+  & ul {
+    display: flex;
+    gap: var(--gap-32);
+  }
+
+  & svg {
+    width: var(--size-48);
+    aspect-ratio: 1;
+  }
 }
 
 ul {
@@ -21,26 +37,29 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--black);
 }
 
 main {
   display: grid;
   grid-template-rows: min-content 1fr;
-  gap: var(--gap-64);
+  gap: var(--gap-18);
+  padding-block-start: var(--gap-18);
+  padding-inline: var(--gap-16);
 }
 
 h1 {
   text-align: center;
+  padding-block-end: var(--gap-64);
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: var(--gap-16);
 }
 
 article {
-  max-width: 460px;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   gap: var(--gap-16);
@@ -62,5 +81,61 @@ article {
     color: var(--white);
     font-size: var(--font-18);
     font-weight: 600;
+  }
+}
+
+form {
+  height: min-content;
+  max-width: 960px;
+  display: grid;
+  grid-auto-rows: min-content;
+  row-gap: var(--gap-18);
+}
+
+form > div {
+  display: grid;
+  grid-template-rows: var(--size-18) 1fr;
+  row-gap: var(--gap-8);
+}
+
+form > button {
+  padding: var(--gap-16) var(--gap-32);
+  border: 1px solid var(--primary);
+}
+form input {
+  padding: var(--gap-16);
+  font-size: var(--font-18);
+}
+form textarea {
+  padding: var(--gap-16);
+  font-size: var(--font-18);
+}
+
+button,
+a.button {
+  border-radius: var(--border-corner-10);
+  padding: var(--gap-16) var(--gap-32);
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-16);
+  padding-block-start: var(--gap-48);
+}
+.button {
+  width: fit-content;
+  color: var(--white);
+  font-size: var(--font-18);
+
+  &.telegram {
+    background-color: var(--primary);
+  }
+  &.whatsapp {
+    background-color: var(--whatsapp-dark-green);
+  }
+  &.href {
+    background-color: var(--black);
   }
 }
